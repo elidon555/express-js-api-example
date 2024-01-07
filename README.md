@@ -60,7 +60,7 @@ Accepts JSON payload containing `minNumber`, `maxNumber`, and `feature` array.
 ```json
 {
   "minNumber": 1,
-  "maxNumber": 100,
+  "maxNumber": 10000000,
   "feature": ["palindrome", "prime"]
 }
 ```
@@ -69,7 +69,7 @@ Accepts JSON payload containing `minNumber`, `maxNumber`, and `feature` array.
 ```json
 {
   "data": [2, 3, 5, 7, 11, ...],
-  "timeOfExecution": 0.0023
+  "timeOfExecution": 0.3950716
 }
 ```
 
