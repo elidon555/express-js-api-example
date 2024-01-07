@@ -1,21 +1,23 @@
 export function isPalindrome(num: number): boolean {
     if (num < 0) return false;
+    if (num < 10) return true;
 
-    const str = num.toString();
-    for (let i = 0; i < Math.floor(str.length / 2); i++) {
-        if (str[i] !== str[str.length - 1 - i]) {
-            return false;
-        }
+    let reversed = 0;
+    let original = num;
+    while (original > 0) {
+        reversed = (reversed * 10) + (original % 10);
+        original = Math.floor(original / 10);
     }
-    return true;
+    return num === reversed;
 }
 
 export function isPrime(number: number): boolean {
     if (number <= 1) return false;
-    if (number === 2) return true;
-    if (number % 2 === 0) return false;
-    for (let i = 3; i * i <= number; i += 2) {
-        if (number % i === 0) return false;
+    if (number <= 3) return true;
+    if (number % 2 === 0 || number % 3 === 0) return false;
+
+    for (let i = 5; i * i <= number; i += 6) {
+        if (number % i === 0 || number % (i + 2) === 0) return false;
     }
     return true;
 }
